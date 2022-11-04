@@ -1,17 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Git and Github</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<title>Git and Github</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <h1 class="text-center">Git and Github Intro.</h1>
-    
 
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+<body>
+	<div class="container text-center">
+		<h1 class="text-center">Git and Github Intro.</h1>
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(1)</h2>
+				<h2>git --version</h2>
+				<p>
+					This command is used to see whether git is locally installed in your
+					computer or not
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitVersion.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git --version</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(2)</h2>
+				<h2>git init</h2>
+				<p>
+					This command is used to initialize a git repository locally on your computer.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitInit.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git init</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(3)</h2>
+				<h2>git status</h2>
+				<p>
+					This command is used to see latest changes in the code you have made after the last commit. 
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitStatus.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git status</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(4)</h2>
+				<h2>git add index.html</h2>
+				<p>
+					This command is used to add index.html file into staging area before commiting.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitAddIndex.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git add index.html</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(5)</h2>
+				<h2>git add .</h2>
+				<p>
+					This command is used to add all edited files into staging area before commiting.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitAddAll.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git add .</h5>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(6)</h2>
+				<h2>git commit -m "your message goes here."</h2>
+				<p>
+					This command is used to commit your latest or recent changes and saves your work with a commit ID and a message.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitCommit.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git commit -m "your message goes here."</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(7)</h2>
+				<h2>git log</h2>
+				<p>
+					This command is used to see history of all your commits.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitLog.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git log</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(8)</h2>
+				<h2>git diff index.html</h2>
+				<p>
+					This command is used to see latest changes you have made in a file after the last commit.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitDiff.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git diff index.html</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(9)</h2>
+				<h2>git checkout index.html</h2>
+				<p>
+					This command is used to undo the latest changes you have made in a file after the last commit.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitCheckoutIndex.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git checkout index.html</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(10)</h2>
+				<h2>git reset --hard commit-Id</h2>
+				<p>
+					This command is used to revert to the old commit and also places the HEAD of git to that commit.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitResetHard.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git reset --hard 41192d2d0ec3e094a46b81c32c035859f7ee7da9</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(11)</h2>
+				<h2>git reset --soft HEAD@{1}</h2>
+				<p>
+					This command is used to place the head to the last commit in current running branch but the changes in the code are those where we reverted.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitResetSoft.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git reset --soft HEAD@{1}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(12)</h2>
+				<h2>git commit -m "reverted to commit-id"</h2>
+				<p>
+					This command is just used to show that we have reverted to old commit.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitRevertCommit.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git commit -m "reverted to old commit with commit-id 41192d2d0ec3e094a46b81c32c035859f7ee7da9"</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(13)</h2>
+				<h2>git branch branchName</h2>
+				<p>
+					This command is used to create a branch named as branchName.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitBranchName.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git branch branchName</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(14)</h2>
+				<h2>git branch</h2>
+				<p>
+					This command is used to see all the branches and also tells us which branch is currently running.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitBranch.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git branch</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(15)</h2>
+				<h2>git checkout branchName</h2>
+				<p>
+					This command is used to switch branch from one to another.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitCheckoutBranch.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git checkout branchName</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(16)</h2>
+				<h2>git merge branchName</h2>
+				<p>
+					This command is used to merge branch named as branchName with the one you are currently working on.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitMregeBranch.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git merge branchName</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(17)</h2>
+				<h2>git branch -d branchName</h2>
+				<p>
+					This command is used to permanently delete a branch named as branchName.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitBranchDelete.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git branch -d branchName</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(18)</h2>
+				<h2>git branch -d branchName</h2>
+				<p>
+					This command is used to permanently delete a branch named as branchName.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitBranchDelete.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git branch -d branchName</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(19)</h2>
+				<h2>create new repository on github</h2>
+				<p>
+					Go to github.com and click on new repository, Give a name to it and click create repository to create a freshy.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/createRepo.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">create new repository on github</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(20)</h2>
+				<h2>push local repository to remote repository</h2>
+				<p>
+					1) git remote add origin https://github.com/Raza023/GitAndGithubIntro.git<br/>
+					2) git branch -M main<br/>
+					3) git push -u origin main<br/><br/>
+					Use these above commands to push local repository to remote.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitPushCommands.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">push local repository to remote repository</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(20)</h2>
+				<h2>git push on cmd</h2>
+				<p>
+					1) git remote add origin https://github.com/Raza023/GitAndGithubIntro.git<br/>
+					2) git branch -M main<br/>
+					3) git push -u origin main<br/><br/>
+					Use these above commands to push local repository to remote.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitPush.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git push on cmd</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(21)</h2>
+				<h2>git pull</h2>
+				<p>
+					If you change code on github and commit it right there on github. It will be only there on github but not is not mapped on local repository. To reflect those changes in local repository as well you have to run this command.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitPull.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git pull</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(22)</h2>
+				<h2>git pull</h2>
+				<p>
+					If you change code on github and commit it right there on github. It will be only there on github but not is not mapped on local repository. To reflect those changes in local repository as well you have to run this command.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/gitPull.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">git pull</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(23)</h2>
+				<h2>fork</h2>
+				<p>
+					Fork someone's github repository in your github account.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/fork.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">fork</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 borderlgao">
+				<h2>(24)</h2>
+				<h2>clone</h2>
+				<p>
+					1) git clone https://github.com/Raza023/testing.git clonedrepo<br/>
+					2) git remote add origin_clone https://github.com/Raza023/testing.git<br/>
+					3) git push -u origin_clone master<br/><br/>
+
+					Use first command from above commands to clone repository into your local directory. And after you are done making changes into code, Use other two commands to push those changes into your forked diectory. And then send a pull request to user whom you forked that repository from. He will test your code and will merge it into his own code, if he wants.
+				</p>
+			</div>
+			<div class="col-lg-6 borderlgao">
+				<div class="card">
+					<img src="./media/images/clone.JPG" class="card-img-top" alt="..." />
+					<div class="card-body">
+						<h5 class="card-title">clone and pull request</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
 </body>
+
 </html>
