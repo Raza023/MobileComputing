@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(counter<=5)
                 {
-                    showResult.setText("Your result: "+counter+"/2");
+                    showResult.setText("Your result: "+counter+"/5");
                 }
             }
         });
