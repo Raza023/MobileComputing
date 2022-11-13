@@ -2,6 +2,7 @@ package com.ultralegends.hm4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         resultbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                counter=0;
                 CheckAnswer(q1, q1Group);
                 CheckAnswer(q2, q2Group);
                 CheckAnswer(q3, q3Group);
@@ -151,11 +153,13 @@ public class MainActivity extends AppCompatActivity {
     {
         int checkedButtenId = qGroup.getCheckedRadioButtonId();
         sample = findViewById(checkedButtenId);
+        int colorCounter = 0;
         if(question.getText().toString().equals("Who is the king of Jungle?"))
         {
             if(sample.getText().toString().equals("Lion"))
             {
                 counter++;
+                colorCounter++;
             }
         }
         else if(question.getText().toString().equals("What is the SI unit of distance?"))
@@ -163,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             if(sample.getText().toString().equals("meter"))
             {
                 counter++;
+                colorCounter++;
             }
         }
         else if(question.getText().toString().equals("What is the capital of Pakistan?"))
@@ -170,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
             if(sample.getText().toString().equals("Islamabad"))
             {
                 counter++;
+                colorCounter++;
             }
         }
         else if(question.getText().toString().equals("Which instrument is used to see micro-organisms?"))
@@ -177,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
             if(sample.getText().toString().equals("Microscope"))
             {
                 counter++;
+                colorCounter++;
             }
         }
         else if(question.getText().toString().equals("Who is the founder of Pakistan?"))
@@ -184,7 +191,16 @@ public class MainActivity extends AppCompatActivity {
             if(sample.getText().toString().equals("Muhammad Ali Jinnah"))
             {
                 counter++;
+                colorCounter++;
             }
+        }
+        if(colorCounter==0)
+        {
+            sample.setTextColor(Color.RED);
+        }
+        else if(colorCounter==1)
+        {
+            sample.setTextColor(Color.GREEN);
         }
     }
 
