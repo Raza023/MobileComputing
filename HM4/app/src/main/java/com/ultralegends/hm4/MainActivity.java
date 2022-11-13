@@ -62,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 CheckAnswer(q1, q1Group);
                 CheckAnswer(q2, q2Group);
-                showResult.setText("Your result: "+counter+"/2");
+                if(counter!=0)
+                {
+                    showResult.setText("Your result: "+counter+"/2");
+                }
             }
         });
     }
