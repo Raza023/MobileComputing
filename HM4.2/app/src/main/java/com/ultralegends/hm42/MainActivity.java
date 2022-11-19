@@ -26,11 +26,12 @@ public class MainActivity extends AppCompatActivity {
     int grassWrongCounter = 0;
     int rootCorrectCounter = 0;
     int rootWrongCounter = 0;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
 
         randomChar = findViewById(R.id.randomChar);
         resultText = findViewById(R.id.resultText);
