@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/GuessTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guess this character"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/randomChar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Random Character"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GuessTextView" />
+
+    <Button
+        android:id="@+id/skybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sky"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grassbtn" />
+
+    <Button
+        android:id="@+id/grassbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Grass"
+        app:layout_constraintEnd_toStartOf="@+id/rootbtn"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/skybtn"
+        app:layout_constraintTop_toBottomOf="@+id/randomChar" />
+
+    <Button
+        android:id="@+id/rootbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Root"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grassbtn" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grassbtn" />
+
+    <TextView
+        android:id="@+id/grassResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Grass Result:\nCorrect: 0\nWrong: 0"
+        app:layout_constraintEnd_toStartOf="@+id/rootResult"
+        app:layout_constraintStart_toEndOf="@+id/skyResult"
+        app:layout_constraintTop_toBottomOf="@+id/resultText" />
+
+    <TextView
+        android:id="@+id/skyResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sky Result:\nCorrect: 0\nWrong: 0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grassResult" />
+
+    <TextView
+        android:id="@+id/rootResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Root Result:\nCorrect: 0\nWrong: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/grassResult" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
