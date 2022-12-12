@@ -19,10 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sendBtn = findViewById(R.id.sendBtn);
-
         browserBtn = findViewById(R.id.browserBtn);
-
-        dialBtn = findViewById(R.id.browserBtn);
+        dialBtn = findViewById(R.id.dialBtn);
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override

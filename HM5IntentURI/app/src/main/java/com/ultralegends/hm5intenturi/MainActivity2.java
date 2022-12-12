@@ -1,7 +1,6 @@
 package com.ultralegends.hm5intenturi;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +23,5 @@ public class MainActivity2 extends AppCompatActivity {
         receivingTextView.setText(intent.getStringExtra("name"));
         receivingString.setText(intent.getStringExtra("StaticString"));
         receivingNumber.setText(Integer.toString(intent.getIntExtra("age",0)));
-
-        
-
     }
 }
