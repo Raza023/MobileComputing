@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HM5IntentURI</string>
+    <string name="activity1Msg">This is some text.</string>
+    <string name="activity1sndBtn">Send text</string>
+    <string name="activity1browserBtn">Open website</string>
+    <string name="activity1dialBtn">Call 03244614345</string>
+    <string name="receivingTextView">Text</string>
+    <string name="receivingString">Static String</string>
+    <string name="receivingNumber">Number</string>
+</resources>
