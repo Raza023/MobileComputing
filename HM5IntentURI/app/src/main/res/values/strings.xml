@@ -4,6 +4,7 @@
     <string name="activity1sndBtn">Send text</string>
     <string name="activity1browserBtn">Open website</string>
     <string name="activity1emailBtn">Send Email</string>
+    <string name="activity1emailBtn2">Send Email 2</string>
     <string name="activity1dialBtn">Call 03244614345</string>
     <string name="receivingTextView">Text to send</string>
     <string name="receivingString">Static String</string>

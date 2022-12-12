@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button sendBtn, browserBtn, dialBtn, mailBtn;
+    Button sendBtn, browserBtn, dialBtn, mailBtn, mailBtn2;
     TextView textView;
 
     @Override
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         browserBtn = findViewById(R.id.browserBtn);
         dialBtn = findViewById(R.id.dialBtn);
         mailBtn = findViewById(R.id.mailBtn);
+        mailBtn2 = findViewById(R.id.mailBtn2);
 
         textView = findViewById(R.id.textView);
 
@@ -56,29 +57,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        mailBtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view)
-//            {
-//                Intent intent = new Intent(Intent.ACTION_SEND);
-//                intent.setType("*/*");
-//                intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
-//                intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
-//                if(intent.resolveActivity(getPackageManager()) != null)
-//                {
-//                    startActivity(intent);
-//                }
-//            }
-//        });
-
         mailBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
+                if(intent.resolveActivity(getPackageManager()) != null)
+                {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        mailBtn2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-//                intent.setData(uri);
+                intent.setData(Uri.parse("mailto:hr770735@gmail.com"));
 //                intent.setType("*/*");
-                intent.setDataAndType(Uri.parse("mailto:hr770735@gmail.com"),"*/*");
+//                intent.setDataAndType(Uri.parse("mailto:hr770735@gmail.com"),"*/*");
                 intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
                 intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
                 if(intent.resolveActivity(getPackageManager()) != null)
