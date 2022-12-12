@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         browserBtn = findViewById(R.id.browserBtn);
         dialBtn = findViewById(R.id.dialBtn);
 
+        textView = findViewById(R.id.textView);
+
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/receivingTextView"
-        android:layout_width="35dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/receivingTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
 
     <TextView
         android:id="@+id/receivingNumber"
-        android:layout_width="50dp"
-        android:layout_height="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/receivingNumber"
         app:layout_constraintEnd_toEndOf="parent"
