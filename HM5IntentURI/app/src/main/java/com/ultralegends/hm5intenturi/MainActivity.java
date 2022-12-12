@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         browserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Uri uri = Uri.parse("https://www.google.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
 
             }
         });
