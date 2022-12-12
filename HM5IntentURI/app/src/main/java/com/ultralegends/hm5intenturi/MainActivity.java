@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button sendBtn, browserBtn, dialBtn;
+    Button sendBtn, browserBtn, dialBtn, mailBtn;
     TextView textView;
 
     @Override
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         sendBtn = findViewById(R.id.sendBtn);
         browserBtn = findViewById(R.id.browserBtn);
         dialBtn = findViewById(R.id.dialBtn);
+        mailBtn = findViewById(R.id.mailBtn);
 
         textView = findViewById(R.id.textView);
 
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("https://www.google.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW,uri);
                 startActivity(intent);
-
             }
         });
 
@@ -56,7 +56,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
+        mailBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
+                if(intent.resolveActivity(getPackageManager()) != null)
+                {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }
