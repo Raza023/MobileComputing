@@ -56,12 +56,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        mailBtn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view)
+//            {
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.setType("*/*");
+//                intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
+//                intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
+//                if(intent.resolveActivity(getPackageManager()) != null)
+//                {
+//                    startActivity(intent);
+//                }
+//            }
+//        });
+
         mailBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("*/*");
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+//                intent.setData(uri);
+//                intent.setType("*/*");
+                intent.setDataAndType(Uri.parse("mailto:hr770735@gmail.com"),"*/*");
                 intent.putExtra(Intent.EXTRA_EMAIL,"imhraza023@gmail.com");
                 intent.putExtra(Intent.EXTRA_SUBJECT,"subject of email");
                 if(intent.resolveActivity(getPackageManager()) != null)
