@@ -45,7 +45,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertQuiz(QuizData quiz) {
+    public boolean insertQuiz(QuizData quiz) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -53,27 +53,74 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CorrectOpt, quiz.getCorrectOption());
         values.put(COLUMN_IsCorrect, quiz.getCorrect());
 
-        db.insert(TABLE_NAME, null, values);
+        long result = db.insert(TABLE_NAME, null, values);
         db.close();
+        if(result == -1)
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
-    public void updateQuiz(QuizData quiz) {
+    public boolean updateQuiz(QuizData quiz) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_SelectOpt, quiz.getSelectedOption());
         values.put(COLUMN_CorrectOpt, quiz.getCorrectOption());
         values.put(COLUMN_IsCorrect, quiz.getCorrect());
 
-        db.update(TABLE_NAME, values, COLUMN_SelectOpt + " = ?", new String[] {quiz.getSelectedOption()});
-        db.close();
+        Cursor cursor = db.rawQuery("Select * from "+TABLE_NAME + " where "+COLUMN_SelectOpt+" = ?",new String[] {quiz.getSelectedOption()});
+
+        if(cursor.getCount()>0)    //it will help for null values
+        {
+            long result = db.update(TABLE_NAME, values, COLUMN_SelectOpt + " = ?", new String[] {quiz.getSelectedOption()});
+            db.close();
+            if(result == -1)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            db.close();
+            return false;
+        }
+
     }
 
-    public void deleteQuiz(String selectedOpt) {
+    public boolean deleteQuiz(String selectedOpt) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, COLUMN_SelectOpt + " = ?", new String[] {selectedOpt});
-        db.close();
+
+        Cursor cursor = db.rawQuery("Select * from "+TABLE_NAME + " where "+COLUMN_SelectOpt+" = ?",new String[] {selectedOpt});
+
+        if(cursor.getCount()>0)    //it will help for null values
+        {
+            long result = db.delete(TABLE_NAME, COLUMN_SelectOpt + " = ?", new String[] {selectedOpt});
+            db.close();
+            if(result == -1)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            db.close();
+            return false;
+        }
     }
 
+    public Cursor getData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from "+TABLE_NAME, null);
+        return cursor;
+    }
 
     public List<QuizData> selectAllQuiz() {
         List<QuizData> quiz = new ArrayList<>();
@@ -95,11 +142,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
-                String selectOpt = cursor.getString(cursor.getColumnIndex(COLUMN_SelectOpt));
-                String correctOpt = cursor.getString(cursor.getColumnIndex(COLUMN_CorrectOpt));
-                boolean isCorrect = cursor.getInt(cursor.getColumnIndex(COLUMN_IsCorrect))>0;
-                quiz.add(new QuizData(selectOpt, correctOpt, isCorrect));
+//                int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+//                String selectOpt = cursor.getString(cursor.getColumnIndex(COLUMN_SelectOpt));
+//                String correctOpt = cursor.getString(cursor.getColumnIndex(COLUMN_CorrectOpt));
+//                boolean isCorrect = cursor.getInt(cursor.getColumnIndex(COLUMN_IsCorrect))>0;
+//                quiz.add(new QuizData(selectOpt, correctOpt, isCorrect));
             } while (cursor.moveToNext());
         }
 
