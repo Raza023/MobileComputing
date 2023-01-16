@@ -46,22 +46,27 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public boolean insertQuiz(QuizData quiz) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_SelectOpt, quiz.getSelectedOption());
-        values.put(COLUMN_CorrectOpt, quiz.getCorrectOption());
-        values.put(COLUMN_IsCorrect, quiz.getCorrect());
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_SelectOpt, quiz.getSelectedOption());
+            values.put(COLUMN_CorrectOpt, quiz.getCorrectOption());
+            values.put(COLUMN_IsCorrect, Boolean.toString(quiz.getCorrect()));
 
-        long result = db.insert(TABLE_NAME, null, values);
-        db.close();
-        if(result == -1)
-        {
-            return false;
+            long result = db.insert(TABLE_NAME, null, values);
+            db.close();
+            if(result == -1)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        else {
-            return true;
-        }
+        return false;
     }
 
     public boolean updateQuiz(QuizData quiz) {
