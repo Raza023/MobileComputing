@@ -38,8 +38,15 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MA3","onRestart called");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        Log.d("MA3","onCreate called");
     }
 }

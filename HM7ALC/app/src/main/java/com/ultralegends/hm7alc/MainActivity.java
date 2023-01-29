@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MA","onRestart called");
+    }
+
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {    //rotate wala masla has been solved
         super.onSaveInstanceState(outState);
         outState.putInt("counterKey",counter);
@@ -56,16 +62,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState!=null)
-        {
-            counter = savedInstanceState.getInt("counterKey");
-            counterView.setText(Integer.toString(counter));
-        }
-
         countBtn = findViewById(R.id.countBtn);
         btnAct2 = findViewById(R.id.btnAct2);
         btnAct3 = findViewById(R.id.btnAct3);
         counterView = findViewById(R.id.counterView);
+
+        try {
+            if(savedInstanceState!=null)
+            {
+                counter = savedInstanceState.getInt("counterKey");
+                counterView.setText(Integer.toString(counter));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
 
         Log.d("MA","onCreate called");
 
