@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        btnAct3 = findViewById(R.id.btnAct);
+        btnAct3 = findViewById(R.id.btnActOn2);
 
         btnAct3.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         countBtn = findViewById(R.id.countBtn);
         btnAct2 = findViewById(R.id.btnAct2);
-        btnAct3 = findViewById(R.id.btnAct);
+        btnAct3 = findViewById(R.id.btnAct3);
         counterView = findViewById(R.id.counterView);
 
         Log.d("MA","onCreate called");
