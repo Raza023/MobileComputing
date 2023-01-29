@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button btn;
     ListView listView;
+    ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +28,23 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         listView = findViewById(R.id.listView);
 
-        ArrayList<String> list = new ArrayList<String>();
+        list= new ArrayList<String>();
+        HelperDB db = new HelperDB(this);
+        list = db.getTasks();
 
         ArrayAdapter<String> adpt = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,list);
 
-        HelperDB db = new HelperDB(this);
+        listView.setAdapter(adpt);
 
-        list = db.getTasks();
 
-        list.
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = editText.getText().toString();
                 if(!text.equals(""))
                 {
+                    editText.setText("");
+                    db.insert(text);
                     list.add(text);
                     adpt.notifyDataSetChanged();
                 }
@@ -51,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                db.delete(list.get(i));
+                list.remove(i);
+                adpt.notifyDataSetChanged();
             }
         });
     }

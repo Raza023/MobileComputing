@@ -44,12 +44,11 @@ public class HelperDB extends SQLiteOpenHelper {
         String query = "SELECT task from tasks";
         Cursor cursor = db.rawQuery(query,null);
 
-        cursor.moveToFirst();   //no need of this by the way(cursor is already on start).
+        cursor.moveToFirst();   //By the way no need of this.(cursor is already on  start).
         while(cursor.moveToNext())
         {
             list.add(cursor.getString(0));
         }
-
         return list;
     }
 
