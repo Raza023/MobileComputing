@@ -28,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         listView = findViewById(R.id.listView);
 
+        ArrayList<String> list = new ArrayList<String>();
+
+        ArrayAdapter<String> adpt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(adpt);
+
         
+
+
     }
 }
