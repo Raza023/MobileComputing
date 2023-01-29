@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = et_name.getText().toString();
-                String rollNo = et_roll_no.getText().toString();
+                int rollNoInt = Integer.parseInt(et_roll_no.getText().toString());
+                String rollNo = Integer.toString(rollNoInt);
+//                String rollNo = et_roll_no.getText().toString();
                 boolean isEnroll = cb_enroll.isChecked();
                 if(name.equals("") && rollNo.equals(""))
                 {
@@ -62,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = et_name.getText().toString();
-                String rollNo = et_roll_no.getText().toString();
+                int rollNoInt = Integer.parseInt(et_roll_no.getText().toString());
+                String rollNo = Integer.toString(rollNoInt);
+//                String rollNo = et_roll_no.getText().toString();
                 boolean isEnroll = cb_enroll.isChecked();
                 if(name.equals("") && rollNo.equals(""))
                 {
@@ -80,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String rollNo = et_roll_no.getText().toString();
+                int rollNoInt = Integer.parseInt(et_roll_no.getText().toString());
+                String rollNo = Integer.toString(rollNoInt);
+//                String rollNo = et_roll_no.getText().toString();
                 if(rollNo.equals(""))
                 {
                     Toast.makeText(MainActivity.this,"Please enter valid data",Toast.LENGTH_SHORT).show();
@@ -97,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void RefreshGrid()
     {
-        ArrayList<Student> list = new ArrayList<Student>();
+        ArrayList<Student> list = db.getStudents();
         ArrayAdapter<Student> adpt = new ArrayAdapter<Student>(MainActivity.this, android.R.layout.simple_list_item_1,list);
         list_view.setAdapter(adpt);
     }

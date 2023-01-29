@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "students.db";
+    private static final String DATABASE_NAME = "student.db";
     private static final String TABLE_NAME = "students";
 
     private static final String COLUMN_ID = "id";
@@ -51,8 +51,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME,student.getName());
-        values.put(COLUMN_NAME,student.getName());
-        values.put(COLUMN_NAME,student.getName());
+        values.put(COLUMN_ROLLNO,student.getRollNo());
+        values.put(COLUMN_ENROLL,student.isEnroll());
 
         db.insert(TABLE_NAME,null,values);
 
@@ -65,8 +65,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME,student.getName());
-        values.put(COLUMN_ROLLNO,student.getName());
-        values.put(COLUMN_ENROLL,student.getName());
+        values.put(COLUMN_ROLLNO,student.getRollNo());
+        values.put(COLUMN_ENROLL,student.isEnroll());
 
         db.update(TABLE_NAME,values,COLUMN_ROLLNO+" = ?",new String[]{student.getRollNo()});
 
