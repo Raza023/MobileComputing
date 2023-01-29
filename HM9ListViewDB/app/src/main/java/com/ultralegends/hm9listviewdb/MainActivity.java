@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         listView = findViewById(R.id.listView);
 
-        list= new ArrayList<String>();
+        list = new ArrayList<String>();
         HelperDB db = new HelperDB(this);
         list = db.getTasks();
 
