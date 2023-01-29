@@ -33,8 +33,20 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adpt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
         listView.setAdapter(adpt);
 
-        
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = editText.getText().toString();
+                if(!text.equals(""))
+                {
+                    editText.setText("");
+                    list.add(text);
+                    adpt.notifyDataSetChanged();
+                }
+            }
+        });
 
+        
 
     }
 }
