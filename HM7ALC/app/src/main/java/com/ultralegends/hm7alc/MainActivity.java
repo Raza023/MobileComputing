@@ -2,7 +2,6 @@ package com.ultralegends.hm7alc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {    //rotate wala masla
+    protected void onSaveInstanceState(@NonNull Bundle outState) {    //rotate wala masla has been solved
         super.onSaveInstanceState(outState);
-
         outState.putInt("counterKey",counter);
     }
 
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         countBtn = findViewById(R.id.countBtn);
         btnAct2 = findViewById(R.id.btnAct2);
-        btnAct3 = findViewById(R.id.btnAct3);
+        btnAct3 = findViewById(R.id.btnAct);
         counterView = findViewById(R.id.counterView);
 
         Log.d("MA","onCreate called");
