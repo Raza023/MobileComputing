@@ -15,7 +15,6 @@ public class Friend {
         this.city = city;
     }
 	
-
     public Friend() {
         this.id = 0;
         this.imageID = 0;
