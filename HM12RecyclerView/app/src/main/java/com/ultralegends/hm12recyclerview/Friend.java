@@ -14,6 +14,7 @@ public class Friend {
         this.dob = dob;
         this.city = city;
     }
+	
 
     public Friend() {
         this.id = 0;
