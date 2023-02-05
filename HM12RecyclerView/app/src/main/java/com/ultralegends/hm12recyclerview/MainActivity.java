@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Friend f0 = new Friend(1,R.drawable.d,"Asad", 1980, "Gilggit");
+        Friend f0 = new Friend(1,R.drawable.d,"Asad", 1980, "Gilgit");
         Friend f1 = new Friend(2,R.drawable.c,"Zubair", 1981, "Lahore");
         Friend f2 = new Friend(3,R.drawable.b,"Musa", 1980, "Quetta");
         Friend f3 = new Friend(4,R.drawable.a,"Nadeem",1987,"Peshawar");
