@@ -40,4 +40,24 @@ public class MainActivity2 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 //        adapter.notifyDataSetChanged();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        db = new HelperDB(this);
+
+        friendArrayList  = db.getStudents();
+
+        recyclerView = findViewById(R.id.recylerViewStudent);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(MainActivity2.this);
+//        layoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false); //(context,orientation,reverseLayout);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new myRecyclerViewAdapter(friendArrayList);
+        recyclerView.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
+    }
 }
