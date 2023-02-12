@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 if(stdName.getText().toString().equals("") || stdrollNo.getText().toString().equals("") || stdSabaq.getText().toString().equals("") || stdSabqi.getText().toString().equals("") || stdManzil.getText().toString().equals(""))
                 {
                     Toast.makeText(MainActivity.this,"Please enter valid data of Students",Toast.LENGTH_SHORT).show();

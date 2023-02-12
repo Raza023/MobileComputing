@@ -45,13 +45,6 @@ public class MainActivity3 extends AppCompatActivity {
 
         std = new Students(id,name,rollNo,sabaq,sabqi,manzil);
 
-//        Log.d("checkid",String.valueOf(id));
-//        Log.d("checkname",name);
-//        Log.d("checkrollno",rollNo);
-//        Log.d("checksabaq",String.valueOf(sabaq));
-//        Log.d("checksabqi",String.valueOf(sabqi));
-//        Log.d("checkmanzil",String.valueOf(manzil));
-
         nameTextView.setText(name);
         rollNoTextView.setText(rollNo);
         sabaqTextView.setText(String.valueOf(sabaq));
