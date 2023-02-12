@@ -87,6 +87,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        stdName = findViewById(R.id.stdName);
+        stdrollNo = findViewById(R.id.stdrollNo);
+        stdSabaq = findViewById(R.id.stdSabaq);
+        stdSabqi = findViewById(R.id.stdSabqi);
+        stdManzil = findViewById(R.id.stdManzil);
+        addBtn = findViewById(R.id.addBtn);
+        showStd = findViewById(R.id.showStd);
+        stdListView = findViewById(R.id.stdListView);
+
+        list = new ArrayList<Students>();
+        db = new HelperDB(this);
+        RefreshGrid();
+    }
+
     public void RefreshGrid()
     {
         ArrayList<Students> list = db.getStudents();
