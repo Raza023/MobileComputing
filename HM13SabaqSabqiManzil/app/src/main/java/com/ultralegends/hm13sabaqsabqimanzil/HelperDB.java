@@ -57,10 +57,10 @@ public class HelperDB extends SQLiteOpenHelper {
         ArrayList<Students> list = new ArrayList<Students>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Log.d("checkmyId",String.valueOf(id));
+//        Log.d("checkmyId",String.valueOf(id));
 
         String query = "SELECT id, name, rollno, sabaq, sabqi, manzil from students";
-        Log.d("checkmyId",query);
+//        Log.d("checkmyId",query);
         Cursor cursor = db.rawQuery(query,null);
 
         if(cursor.moveToFirst())  //By the way no need of this.(cursor is already on start).
