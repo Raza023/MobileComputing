@@ -18,6 +18,15 @@ public class Students {
         this.manzil = manzil;
     }
 
+    public Students() {
+        this.id = 0;
+        this.name = "";
+        this.rollNo = "";
+        this.sabaq = 0;
+        this.sabqi = 0;
+        this.manzil = 0;
+    }
+
 
     public int getId() {
         return id;
@@ -69,13 +78,10 @@ public class Students {
 
     @Override
     public String toString() {
-        return "Students{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "name='" + name + '\'' +
                 ", rollNo='" + rollNo + '\'' +
                 ", sabaq=" + sabaq +
                 ", sabqi=" + sabqi +
-                ", manzil=" + manzil +
-                '}';
+                ", manzil=" + manzil;
     }
 }

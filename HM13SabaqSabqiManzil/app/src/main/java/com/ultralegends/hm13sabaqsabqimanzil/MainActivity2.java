@@ -10,17 +10,24 @@ import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    ArrayList<Students> studentArrayList = new ArrayList<Students>();
+    ArrayList<Students> friendArrayList = new ArrayList<Students>();
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
+
+    HelperDB db;
+//    ArrayList<Students> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-//        studentArrayList = db.
+//        list = new ArrayList<Students>();
+        db = new HelperDB(this);
+
+        friendArrayList  = db.getStudents();
+//        friendArrayList.addAll(Arrays.asList(new Friend[]{f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11}));
 
         recyclerView = findViewById(R.id.recylerViewStudent);
         recyclerView.setHasFixedSize(true);
@@ -29,8 +36,8 @@ public class MainActivity2 extends AppCompatActivity {
 //        layoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false); //(context,orientation,reverseLayout);
         recyclerView.setLayoutManager(layoutManager);
 
-//        adapter = new myRecyclerViewAdapter(studentArrayList);
-//        recyclerView.setAdapter(adapter);
+        adapter = new myRecyclerViewAdapter(friendArrayList);
+        recyclerView.setAdapter(adapter);
 //        adapter.notifyDataSetChanged();
     }
 }
