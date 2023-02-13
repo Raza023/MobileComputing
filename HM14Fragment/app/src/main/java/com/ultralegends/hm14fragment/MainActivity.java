@@ -25,14 +25,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentOne one = new FragmentOne();
                 transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace()
+                transaction.replace(R.id.fragmentContainerView, one);
+                transaction.commit();
             }
         });
 
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                FragmentTwo two = new FragmentTwo();
+                transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragmentContainerView,two);
+                transaction.commit();
             }
         });
         
