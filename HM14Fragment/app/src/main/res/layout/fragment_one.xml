@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="24sp"
-        android:background="@color/teal-200"
         android:text="Fragment One is here." />
 
 </FrameLayout>
