@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.button);   //customized toast
         buttonAlert = findViewById(R.id.button_alert_dialog);
-        buttonAlert1 = findViewById(R.id.button_alert_dialog1);
+        buttonAlert1 = findViewById(R.id.button_alert_dialog1);     //simple Toast
         buttonAlertList = findViewById(R.id.button_alert_dialog_with_list);
         buttonMC = findViewById(R.id.button_alert_dialog_with_mc);
         buttonCustDialog = findViewById(R.id.button_customized_dialog);
@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(MainActivity.this, "Clicked!", Toast.LENGTH_LONG).show();
                 LayoutInflater inflater = getLayoutInflater();
-                View layout = inflater.inflate(R.layout.my_layout,
-                        (ViewGroup) findViewById(R.id.my_toast_viewgroup));
+                View layout = inflater.inflate(R.layout.my_layout, (ViewGroup) findViewById(R.id.my_toast_viewgroup));
 
                 TextView text = layout.findViewById(R.id.textView);
                 text.setText("Customized Toast");
@@ -58,23 +57,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("It is message");
                 builder.setTitle("Title");
-                builder.setCancelable(true);
-                builder.setPositiveButton("Positive Button",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int asdf)
-                            { finish();}
-                        });
-                builder.setNegativeButton("Negative Button",new DialogInterface.OnClickListener() {
+                builder.setMessage("It is message");
+                builder.setCancelable(true);   //will be closed when clicked outside of dialog.
+                builder.setPositiveButton("Close (+)", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Cancel (-)",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
-                    { dialog.cancel(); }
+                    {
+                        dialog.cancel();
+                    }
                 });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
 
+            }
+        });
+
+        buttonAlert1.setOnClickListener(new View.OnClickListener() { //simple toast
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"This is some text.",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -140,12 +148,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
 // Set the layout for the dialog
                 LayoutInflater inflater = getLayoutInflater();
-                final View dialogView = inflater.inflate(R.layout.login_dialog, null);
-                builder.setView(dialogView);
-
+                final View layout = inflater.inflate(R.layout.login_dialog, null);
+                builder.setView(layout);
 // Add the buttons
                 builder.setPositiveButton("Login", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -155,15 +161,13 @@ public class MainActivity extends AppCompatActivity {
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
+                        dialog.cancel();
                     }
                 });
-
 // Create the AlertDialog
                 AlertDialog dialog = builder.create();
-
 // Show the dialog
                 dialog.show();
-
             }
         });
     }
