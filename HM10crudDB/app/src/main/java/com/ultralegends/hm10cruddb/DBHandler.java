@@ -26,7 +26,6 @@ public class DBHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
@@ -59,6 +58,14 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void insertStd(Student std)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "INSERT INTO students ("+COLUMN_NAME+", "+COLUMN_ROLLNO+", "+COLUMN_ENROLL+") values ('"+std.getName()+"','"+std.getRollNo()+"',"+std.isEnroll()+")";
+        db.execSQL(query);
+        db.close();
+    }
+
     public void update(Student student)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -69,16 +76,29 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_ENROLL,student.isEnroll());
 
         db.update(TABLE_NAME,values,COLUMN_ROLLNO+" = ?",new String[]{student.getRollNo()});
+        db.close();
+    }
 
+    public void updateStudent(Student std)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE students SET "+COLUMN_ROLLNO+" = '"+std.getRollNo()+"', "+COLUMN_NAME+" = '"+std.getName()+"', "+COLUMN_ENROLL+" = "+std.isEnroll()+", WHERE "+COLUMN_ROLLNO+" = '"+std.getRollNo()+"'";
+        db.execSQL(query);
         db.close();
     }
 
     public void delete(String rollNo)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-
         db.delete(TABLE_NAME,COLUMN_ROLLNO+" = ?",new String[]{rollNo});
+        db.close();
+    }
 
+    public void deleteStudent(String rollNo)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM students where "+COLUMN_ROLLNO+" = '"+rollNo+"'";
+        db.execSQL(query);
         db.close();
     }
 

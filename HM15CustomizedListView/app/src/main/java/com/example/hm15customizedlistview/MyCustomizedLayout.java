@@ -27,11 +27,11 @@ public class MyCustomizedLayout extends ArrayAdapter {
 
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
-        View singleEntityView=inflater.inflate( R.layout.mylayout, null,true);
-        TextView titleHeading = singleEntityView.findViewById(R.id.textView);
-        TextView titleDetails = singleEntityView.findViewById(R.id.textView2);
+        View layout=inflater.inflate( R.layout.mylayout, null,true);
+        TextView titleHeading = layout.findViewById(R.id.textView);
+        TextView titleDetails = layout.findViewById(R.id.textView2);
         titleHeading.setText(maintitle[position]);
         titleDetails.setText(subtitle[position]);
-        return singleEntityView;
+        return layout;
     }
 }
